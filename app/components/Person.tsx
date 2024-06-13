@@ -1,4 +1,4 @@
-type PersonProps = {
+export type PersonProps = {
   name: string
   home: string
 }
