@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import { useState } from 'react';
 
 export const meta: MetaFunction = () => {
   return [
@@ -8,34 +9,14 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
+  const [page, setPage] = useState(1)
+
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/start/quickstart"
-            rel="noreferrer"
-          >
-            5m Quick Start
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/start/tutorial"
-            rel="noreferrer"
-          >
-            30m Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
+    <div>
+      <h1 className='text-3xl font-bold underline'>
+        Hello World!
+      </h1>
+      
     </div>
   );
 }
