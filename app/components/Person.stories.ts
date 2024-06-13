@@ -7,7 +7,6 @@ export default {
 
 export const Primary = {
   args: {
-    img: 'https://picsum.photos/100',
     name: 'John Smith',
     home: 'Earth'
   }
