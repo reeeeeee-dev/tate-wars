@@ -59,8 +59,16 @@ export async function loader({ request }: LoaderFunctionArgs) {
 
   const res = await fetch(url);
   const data = await res.json()
-  const people = data?.results?.map(({ name, homeworld }: { name: string, homeworld: string}) => 
-    ({ name, home: homeworld }))
+
+  const people = []
+  for(const person of data.results) {
+    const homeRes = await fetch(person.homeworld)
+    const homeData = await homeRes.json()
+    people.push({
+      name: person.name as string,
+      home: homeData.name as string
+    })
+  }
 
   return {
     people,
